@@ -75,7 +75,6 @@ int main()
 	bool Marche = false;
 	while (window.isOpen())
 	{
-		// Handle events
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -92,7 +91,7 @@ int main()
 			{
 				if (!Marche)
 				{
-					// (re)start the game
+					// Lancement
 					Marche = true;
 					clock.restart();
 
@@ -125,7 +124,7 @@ int main()
 			{
 				RaquetteGauche.move(0.f, VitesseRaq * delta);
 			}
-			//Mouvement joueur 2
+			// Mouvement joueur 2
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::Up) && (RaquetteDroite.getPosition().y - TailleRaquette.y / 2 > 5.f))
 			{
 				RaquetteDroite.move(0.f, -VitesseRaq * delta);
@@ -138,7 +137,7 @@ int main()
 			float factor = VitesseBalle * delta;
 			balle.move(std::cos(AngleBalle) * factor, std::sin(AngleBalle) * factor);
 
-			// Collision Manager
+			// Collision
 			if (balle.getPosition().x - TailleBalle < 0.f)
 			{
 				Marche = false;
@@ -181,7 +180,7 @@ int main()
 			}
 		}
 
-		// Clear the window
+		// Clear
 		window.clear(sf::Color::Black);
 
 		if (Marche)
@@ -197,8 +196,6 @@ int main()
 			// Message de pause
 			window.draw(MessagePause);
 		}
-
-		// Display things on screen
 		window.display();
 	}
 
