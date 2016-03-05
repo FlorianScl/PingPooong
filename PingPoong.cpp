@@ -20,7 +20,7 @@ int main()
 
 	// Charger Police
 	sf::Font font;
-	if (!font.loadFromFile("resources/ocrastd.otf"))
+	if (!font.loadFromFile("ocrastd.otf"))
 		return EXIT_FAILURE;
 
 	// Message Pause
